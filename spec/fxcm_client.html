@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<title>FXCM</title>
+</head>
+
+<body class="layout_2colA body_logout">
+	<div id="content">
+		<div id="content_inner">
+			<div id="main">
+				<div id="ui-tab" style="margin-top:10px;">
+					<div id="fragment-2">
+						<div class="mod_table01-h">
+							<table cellspacing="0">
+								<colgroup>
+									<col width="34%" />
+									<col width="33%" />
+									<col width="33%" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>通貨ペア</th>
+										<th>売りスワップポイント (円)</th>
+										<th>買いスワップポイント (円)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/米ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/USD)</div>
+											<td class="cellC in_text02"><!--$EUR/USD_SHORT--></td>
+											<td class="cellC"><!--$EUR/USD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/JPY)</div>
+											<td class="cellC in_text02"><!--$EUR/JPY_SHORT--></td>
+											<td class="cellC"><!--$EUR/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/JPY)</div>
+											<td class="cellC in_text02"><!--$GBP/JPY_SHORT--></td>
+											<td class="cellC"><!--$GBP/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">スイスフラン/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(CHF/JPY)</div>
+											<td class="cellC in_text02"><!--$CHF/JPY_SHORT--></td>
+											<td class="cellC"><!--$CHF/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド/スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/CHF)</div>
+											<td class="cellC in_text02"><!--$GBP/CHF_SHORT--></td>
+											<td class="cellC"><!--$GBP/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/豪ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/AUD)</div>
+											<td class="cellC in_text02"><!--$EUR/AUD_SHORT--></td>
+											<td class="cellC"><!--$EUR/AUD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/カナダドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/CAD)</div>
+											<td class="cellC in_text02"><!--$EUR/CAD_SHORT--></td>
+											<td class="cellC"><!--$EUR/CAD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">豪ドル/カナダドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(AUD/CAD)</div>
+											<td class="cellC in_text02"><!--$AUD/CAD_SHORT--></td>
+											<td class="cellC"><!--$AUD/CAD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">豪ドル/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(AUD/JPY)</div>
+											<td class="cellC in_text02"><!--$AUD/JPY_SHORT--></td>
+											<td class="cellC"><!--$AUD/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">カナダドル/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(CAD/JPY)</div>
+											<td class="cellC in_text02"><!--$CAD/JPY_SHORT--></td>
+											<td class="cellC"><!--$CAD/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">NZドル/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(NZD/JPY)</div>
+											<td class="cellC in_text02"><!--$NZD/JPY_SHORT--></td>
+											<td class="cellC"><!--$NZD/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/JPY)</div>
+											<td class="cellC in_text02"><!--$USD/JPY_SHORT--></td>
+											<td class="cellC"><!--$USD/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド／カナダドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/CAD)</div>
+											<td class="cellC in_text02"><!--$GBP/CAD_SHORT--></td>
+											<td class="cellC"><!--$GBP/CAD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド／NZドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/NZD)</div>
+											<td class="cellC in_text02"><!--$GBP/NZD_SHORT--></td>
+											<td class="cellC"><!--$GBP/NZD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド/豪ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/AUD)</div>
+											<td class="cellC in_text02"><!--$GBP/AUD_SHORT--></td>
+											<td class="cellC"><!--$GBP/AUD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">豪ドル/NZドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(AUD/NZD)</div>
+											<td class="cellC in_text02"><!--$AUD/NZD_SHORT--></td>
+											<td class="cellC"><!--$AUD/NZD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ポンド/米ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(GBP/USD)</div>
+											<td class="cellC in_text02"><!--$GBP/USD_SHORT--></td>
+											<td class="cellC"><!--$GBP/USD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">豪ドル/スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(AUD/CHF)</div>
+											<td class="cellC in_text02"><!--$AUD/CHF_SHORT--></td>
+											<td class="cellC"><!--$AUD/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル/スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/CHF)</div>
+											<td class="cellC in_text02"><!--$USD/CHF_SHORT--></td>
+											<td class="cellC"><!--$USD/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/NZドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/NZD)</div>
+											<td class="cellC in_text02"><!--$EUR/NZD_SHORT--></td>
+											<td class="cellC"><!--$EUR/NZD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル/南アフリカランド</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/ZAR)</div>
+											<td class="cellC in_text02"><!--$USD/ZAR_SHORT--></td>
+											<td class="cellC"><!--$USD/ZAR_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/CHF)</div>
+											<td class="cellC in_text02"><!--$EUR/CHF_SHORT--></td>
+											<td class="cellC"><!--$EUR/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル/香港ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/HKD)</div>
+											<td class="cellC in_text02"><!--$USD/HKD_SHORT--></td>
+											<td class="cellC"><!--$USD/HKD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">豪ドル/米ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(AUD/USD)</div>
+											<td class="cellC in_text02"><!--$AUD/USD_SHORT--></td>
+											<td class="cellC"><!--$AUD/USD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル/カナダドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/CAD)</div>
+											<td class="cellC in_text02"><!--$USD/CAD_SHORT--></td>
+											<td class="cellC"><!--$USD/CAD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">南アフリカランド/日本円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(ZAR/JPY)</div>
+											<td class="cellC in_text02"><!--$ZAR/JPY_SHORT--></td>
+											<td class="cellC"><!--$ZAR/JPY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">NZドル/米ドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(NZD/USD)</div>
+											<td class="cellC in_text02"><!--$NZD/USD_SHORT--></td>
+											<td class="cellC"><!--$NZD/USD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">米ドル／トルコリラ</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(USD/TRY)</div>
+											<td class="cellC in_text02"><!--$USD/TRY_SHORT--></td>
+											<td class="cellC"><!--$USD/TRY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/トルコリラ</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/TRY)</div>
+											<td class="cellC in_text02"><!--$EUR/TRY_SHORT--></td>
+											<td class="cellC"><!--$EUR/TRY_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">NZドル／スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(NZD/CHF)</div>
+											<td class="cellC in_text02"><!--$NZD/CHF_SHORT--></td>
+											<td class="cellC"><!--$NZD/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">ユーロ/ポンド</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(EUR/GBP)</div>
+											<td class="cellC in_text02"><!--$EUR/GBP_SHORT--></td>
+											<td class="cellC"><!--$EUR/GBP_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">カナダドル／スイスフラン</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(CAD/CHF)</div>
+											<td class="cellC in_text02"><!--$CAD/CHF_SHORT--></td>
+											<td class="cellC"><!--$CAD/CHF_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">NZドル／カナダドル</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(NZD/CAD)</div>
+											<td class="cellC in_text02"><!--$NZD/CAD_SHORT--></td>
+											<td class="cellC"><!--$NZD/CAD_LONG--></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left;">トルコリラ／円</div>
+											<div style="text-align:left;">&nbsp;&nbsp;(TRY/JPY)</div>
+											<td class="cellC in_text02"><!--$TRY/JPY_SHORT--></td>
+											<td class="cellC"><!--$TRY/JPY_LONG--></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #content_inner -->
+		</div>
+		<!-- #content -->
+	</div>
+</body>
+
+</html>
