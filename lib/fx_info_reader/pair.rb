@@ -36,6 +36,10 @@ module FxInfoReader::Pair
   EUR_TRY = "EUR/TRY"
   UNKNOWN = "UNKNOWN"
 
+  def self.to_s(pair, splitter)
+    pair.sub("/", splitter)
+  end
+
   def self.all
     self.constants.map{|name| self.const_get(name) }
   end

@@ -36,9 +36,10 @@ class FxInfoReader::FxcmClient
     return swap_point_list
   end
 
-  def get_pair_from_text text
-    FxInfoReader::Pair::all.each do |pair|
-      return pair if text.include?(pair)
+  private
+    def get_pair_from_text(text)
+      FxInfoReader::Pair::all.each do |pair|
+        return pair if text.include?(pair)
+      end
     end
-  end
 end

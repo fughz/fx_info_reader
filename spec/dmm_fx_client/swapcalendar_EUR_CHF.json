@@ -1,0 +1,35 @@
+{
+    "body": {
+        "swap": [
+            {
+                "buySwapAmount": "24",
+                "eventYmdDate": "20160407",
+                "fxProductId": "EUR_CHF",
+                "givingDays": "3",
+                "sellSwapAmount": "-24",
+                "swapAmountUnit": "10000"
+            },
+            {
+                "buySwapAmount": "8",
+                "eventYmdDate": "20160408",
+                "fxProductId": "EUR_CHF",
+                "givingDays": "1",
+                "sellSwapAmount": "-8",
+                "swapAmountUnit": "10000"
+            },
+            {
+                "buySwapAmount": "$EUR_CHF_LONG",
+                "eventYmdDate": "20160411",
+                "fxProductId": "EUR_CHF",
+                "givingDays": "1",
+                "sellSwapAmount": "$EUR_CHF_SHORT",
+                "swapAmountUnit": "10000"
+            }
+        ]
+    },
+    "meta": {
+        "sessUpdTime": "1970/01/01 09:00:00",
+        "status": "OK",
+        "timestamp": "2016/04/09 06:00:01"
+    }
+}

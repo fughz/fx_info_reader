@@ -1,5 +1,6 @@
 require 'fx_info_reader/gmo_click_fx_neo_client'
 require 'fx_info_reader/fxcm_client'
+require 'fx_info_reader/dmm_fx_client'
 
 class FxInfoReader::ClientFactory
   def self.create(trader)
@@ -8,6 +9,8 @@ class FxInfoReader::ClientFactory
       FxInfoReader::GmoClickFxNeoClient.new
     when FxInfoReader::Trader::FXCM
       FxInfoReader::FxcmClient.new
+    when FxInfoReader::Trader::DMM_FX
+      FxInfoReader::DmmFxClient.new
     end
   end
 end

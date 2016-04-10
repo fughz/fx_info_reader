@@ -1,0 +1,35 @@
+{
+    "body": {
+        "swap": [
+            {
+                "buySwapAmount": "24",
+                "eventYmdDate": "20160407",
+                "fxProductId": "EUR/JPY",
+                "givingDays": "3",
+                "sellSwapAmount": "-24",
+                "swapAmountUnit": "10000"
+            },
+            {
+                "buySwapAmount": "8",
+                "eventYmdDate": "20160408",
+                "fxProductId": "EUR/JPY",
+                "givingDays": "1",
+                "sellSwapAmount": "-8",
+                "swapAmountUnit": "10000"
+            },
+            {
+                "buySwapAmount": "$EUR_JPY_LONG",
+                "eventYmdDate": "20160411",
+                "fxProductId": "EUR/JPY",
+                "givingDays": "1",
+                "sellSwapAmount": "$EUR_JPY_SHORT",
+                "swapAmountUnit": "10000"
+            }
+        ]
+    },
+    "meta": {
+        "sessUpdTime": "1970/01/01 09:00:00",
+        "status": "OK",
+        "timestamp": "2016/04/09 06:00:01"
+    }
+}
