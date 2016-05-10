@@ -10,5 +10,13 @@ describe FxInfoReader::ClientFactory do
       client = FxInfoReader::ClientFactory.create(FxInfoReader::Trader::FXCM)
       expect(client.instance_of?(FxInfoReader::FxcmClient)).to eq true
     end
+    it 'create Oh Fx client' do
+      client = FxInfoReader::ClientFactory.create(FxInfoReader::Trader::OH_FX)
+      expect(client.instance_of?(FxInfoReader::OhFxClient)).to eq true
+    end
+    it 'create Lion Fx Client' do
+      client = FxInfoReader::ClientFactory.create(FxInfoReader::Trader::LION_FX)
+      expect(client.instance_of?(FxInfoReader::LionFxClient)).to eq true
+    end
   end
 end
