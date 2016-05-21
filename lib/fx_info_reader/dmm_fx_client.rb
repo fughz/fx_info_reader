@@ -37,7 +37,9 @@ class FxInfoReader::DmmFxClient
       swap = json["body"]["swap"].last
       long = swap["buySwapAmount"]
       short = swap["sellSwapAmount"]
-      swap_point_list.set(source[:pair], FxInfoReader::SwapPoint.new(Integer(short), Integer(long)))
+      swap_point_list.set(
+        source[:pair],
+        FxInfoReader::SwapPoint.new(Integer(short), Integer(long), 10000))
     end
 
     return swap_point_list

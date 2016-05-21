@@ -6,26 +6,26 @@ describe FxInfoReader::DmmFxClient do
   describe 'get_swap_point_list' do
     it 'normal path' do
       expect_values = [
-        {:pair => FxInfoReader::Pair::USD_JPY, :short => 100,  :long => 101},
-        {:pair => FxInfoReader::Pair::EUR_JPY, :short => 200,  :long => 201},
-        {:pair => FxInfoReader::Pair::GBP_JPY, :short => 300,  :long => 301},
-        {:pair => FxInfoReader::Pair::AUD_JPY, :short => 400,  :long => 401},
-        {:pair => FxInfoReader::Pair::NZD_JPY, :short => 500,  :long => 501},
-        {:pair => FxInfoReader::Pair::CAD_JPY, :short => 500,  :long => 501},
-        {:pair => FxInfoReader::Pair::CHF_JPY, :short => 600,  :long => 601},
-        {:pair => FxInfoReader::Pair::ZAR_JPY, :short => 700,  :long => 701},
-        {:pair => FxInfoReader::Pair::EUR_USD, :short => 800,  :long => 801},
-        {:pair => FxInfoReader::Pair::GBP_USD, :short => 900,  :long => 901},
-        {:pair => FxInfoReader::Pair::AUD_USD, :short => 1000, :long => 1001},
-        {:pair => FxInfoReader::Pair::NZD_USD, :short => 1100, :long => 1101},
-        {:pair => FxInfoReader::Pair::EUR_GBP, :short => 1200, :long => 1201},
-        {:pair => FxInfoReader::Pair::USD_CHF, :short => 1300, :long => 1301},
-        {:pair => FxInfoReader::Pair::USD_CAD, :short => 1400, :long => 1401},
-        {:pair => FxInfoReader::Pair::EUR_AUD, :short => 1500, :long => 1501},
-        {:pair => FxInfoReader::Pair::EUR_NZD, :short => 1600, :long => 1601},
-        {:pair => FxInfoReader::Pair::EUR_CHF, :short => 1700, :long => 1701},
-        {:pair => FxInfoReader::Pair::GBP_AUD, :short => 1800, :long => 1801},
-        {:pair => FxInfoReader::Pair::GBP_CHF, :short => 1900, :long => 1901},
+        {:pair => FxInfoReader::Pair::USD_JPY, :short => 100,  :long => 101, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_JPY, :short => 200,  :long => 201, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::GBP_JPY, :short => 300,  :long => 301, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::AUD_JPY, :short => 400,  :long => 401, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::NZD_JPY, :short => 500,  :long => 501, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::CAD_JPY, :short => 500,  :long => 501, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::CHF_JPY, :short => 600,  :long => 601, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::ZAR_JPY, :short => 700,  :long => 701, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_USD, :short => 800,  :long => 801, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::GBP_USD, :short => 900,  :long => 901, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::AUD_USD, :short => 1000, :long => 1001, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::NZD_USD, :short => 1100, :long => 1101, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_GBP, :short => 1200, :long => 1201, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::USD_CHF, :short => 1300, :long => 1301, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::USD_CAD, :short => 1400, :long => 1401, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_AUD, :short => 1500, :long => 1501, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_NZD, :short => 1600, :long => 1601, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::EUR_CHF, :short => 1700, :long => 1701, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::GBP_AUD, :short => 1800, :long => 1801, :currency_unit => 10000},
+        {:pair => FxInfoReader::Pair::GBP_CHF, :short => 1900, :long => 1901, :currency_unit => 10000},
       ]
 
       for expect_value in expect_values do
@@ -45,7 +45,7 @@ describe FxInfoReader::DmmFxClient do
 
       for expect_value in expect_values do
         expect(list.get(expect_value[:pair]))
-          .to eq FxInfoReader::SwapPoint.new(expect_value[:short], expect_value[:long])
+          .to eq FxInfoReader::SwapPoint.new(expect_value[:short], expect_value[:long], expect_value[:currency_unit])
       end
     end
   end

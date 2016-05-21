@@ -28,6 +28,29 @@ class FxInfoReader::OhFxClient
     "豪ドル/米ドル" => FxInfoReader::Pair::AUD_USD,
   }
 
+  @@currency_unit_table = {
+    FxInfoReader::Pair::USD_JPY => 10000,
+    FxInfoReader::Pair::EUR_JPY => 10000,
+    FxInfoReader::Pair::GBP_JPY => 10000,
+    FxInfoReader::Pair::AUD_JPY => 10000,
+    FxInfoReader::Pair::NZD_JPY => 10000,
+    FxInfoReader::Pair::CAD_JPY => 10000,
+    FxInfoReader::Pair::CHF_JPY => 10000,
+    FxInfoReader::Pair::HKG_JPY => 100000,
+    FxInfoReader::Pair::CNH_JPY => 100000,
+    FxInfoReader::Pair::KRW_JPY => 10000000,
+    FxInfoReader::Pair::ZAR_JPY => 100000,
+    FxInfoReader::Pair::SGD_JPY => 10000,
+    FxInfoReader::Pair::MXN_JPY => 100000,
+    FxInfoReader::Pair::NOK_JPY => 10000,
+    FxInfoReader::Pair::SEK_JPY => 10000,
+    FxInfoReader::Pair::PLN_JPY => 10000,
+    FxInfoReader::Pair::TRY_JPY => 10000,
+    FxInfoReader::Pair::EUR_USD => 10000,
+    FxInfoReader::Pair::GBP_USD => 10000,
+    FxInfoReader::Pair::AUD_USD => 10000,
+  }
+
   def get_swap_point_list()
     html = open("https://ohfx.netbk.co.jp/nb/trade/market/swap.aspx") do |f|
       Kconv.toutf8(f.read)
@@ -40,11 +63,15 @@ class FxInfoReader::OhFxClient
         pair1, short1, long1, pair2, short2, long2 = row.element_children
         pair = get_pair_from_text(pair1.text)
         if pair != FxInfoReader::Pair::UNKNOWN
-          swap_point_list.set(pair, FxInfoReader::SwapPoint.new(Integer(short1.text), Integer(long1.text)))
+          swap_point_list.set(
+            pair,
+            FxInfoReader::SwapPoint.new(Integer(short1.text), Integer(long1.text), @@currency_unit_table[pair]))
         end
         pair = get_pair_from_text(pair2.text)
         if pair != FxInfoReader::Pair::UNKNOWN
-          swap_point_list.set(pair, FxInfoReader::SwapPoint.new(Integer(short2.text), Integer(long2.text)))
+          swap_point_list.set(
+            pair,
+            FxInfoReader::SwapPoint.new(Integer(short2.text), Integer(long2.text), @@currency_unit_table[pair]))
         end
       end
     end

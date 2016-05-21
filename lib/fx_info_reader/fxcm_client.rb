@@ -26,7 +26,9 @@ class FxInfoReader::FxcmClient
           pair = get_pair_from_text pair_elem.text
           short = short_elem.text unless short_elem.nil?
           long = long_elem.text unless long_elem.nil?
-          swap_point_list.set(pair, FxInfoReader::SwapPoint.new(Integer(short), Integer(long)))
+          swap_point_list.set(
+            pair,
+            FxInfoReader::SwapPoint.new(Integer(short), Integer(long), 10000))
         rescue
           next
         end

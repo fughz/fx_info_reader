@@ -23,7 +23,8 @@ class FxInfoReader::LionFxClient
           elements.shift # day
           short_elem = elements.shift
           long_elem = elements.shift
-          spoint = FxInfoReader::SwapPoint.new(Float(short_elem.text), Float(long_elem.text))
+          spoint = FxInfoReader::SwapPoint.new(
+            Float(short_elem.text), Float(long_elem.text), 1000)
           swap_point_list.set(pair_elem.text, spoint)
         rescue
           next
