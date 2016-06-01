@@ -30,4 +30,19 @@ describe FxInfoReader::SwapPoint do
     expect(lhs != rhs).to be false
   end
 
+  it 'short' do
+    pt = FxInfoReader::SwapPoint.new(100, 0, 1000)
+    expect(pt.short).to be 100
+  end
+
+  it 'long' do
+    pt = FxInfoReader::SwapPoint.new(0, 100, 1000)
+    expect(pt.long).to be 100
+  end
+
+  it 'currency_unit' do
+    pt = FxInfoReader::SwapPoint.new(0, 0, 1000)
+    expect(pt.currency_unit).to be 1000
+  end
+
 end
