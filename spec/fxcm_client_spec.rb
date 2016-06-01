@@ -59,5 +59,26 @@ describe FxInfoReader::FxcmClient do
           .to eq FxInfoReader::SwapPoint.new(expect_value[:short], expect_value[:long], expect_value[:currency_unit])
       end
     end
+
+    it 'empty response' do
+      stub_request(:get, "http://www.fxcm.co.jp/service/rate_swap.html").to_return(
+        :status => 200,
+        :headers => {},
+        :body => ""
+      )
+      client = FxInfoReader::FxcmClient.new
+      expect(client.get_swap_point_list.all.empty?).to eq true
+    end
+
+    it 'not found page' do
+      stub_request(:get, "http://www.fxcm.co.jp/service/rate_swap.html").to_return(
+        :status => 404,
+        :headers => {},
+        :body => ""
+      )
+      client = FxInfoReader::FxcmClient.new
+      expect{client.get_swap_point_list}.to raise_error(OpenURI::HTTPError)
+    end
+
   end
 end

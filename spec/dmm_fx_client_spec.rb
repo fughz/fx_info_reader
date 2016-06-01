@@ -48,5 +48,32 @@ describe FxInfoReader::DmmFxClient do
           .to eq FxInfoReader::SwapPoint.new(expect_value[:short], expect_value[:long], expect_value[:currency_unit])
       end
     end
+
+    it 'empty response' do
+      FxInfoReader::Pair::all.each do |pair|
+        pair_str = FxInfoReader::Pair.to_s(pair, "_")
+        stub_request(:get, "http://fx.dmm.com/api/fx/swap/swapcalendar_#{pair_str}.json").to_return(
+          :status => 200,
+          :headers => {},
+          :body => ""
+        )
+      end
+      client = FxInfoReader::DmmFxClient.new
+      expect{client.get_swap_point_list}.to raise_error(JSON::ParserError)
+    end
+
+    it 'not found page' do
+      FxInfoReader::Pair::all.each do |pair|
+        pair_str = FxInfoReader::Pair.to_s(pair, "_")
+        stub_request(:get, "http://fx.dmm.com/api/fx/swap/swapcalendar_#{pair_str}.json").to_return(
+          :status => 404,
+          :headers => {},
+          :body => ""
+        )
+      end
+      client = FxInfoReader::DmmFxClient.new
+      expect{client.get_swap_point_list}.to raise_error(OpenURI::HTTPError)
+    end
+
   end
 end
